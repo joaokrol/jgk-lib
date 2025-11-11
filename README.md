@@ -5,7 +5,7 @@ Projeto da base dos desenlvimentos das jgk
 # Pastas
 
 ## Esquema
-
+```
 src
 ├─ app/ # bootstrap da aplicação
 │ ├─ providers/ # Providers (Antd, Query, Auth, Theme)
@@ -73,7 +73,7 @@ src
 │ └─ global.d.ts
 │
 └─ index.tsx
-
+```
 ## app/
 
 Função: bootstrap da aplicação.
