@@ -38,19 +38,19 @@ export type DateFieldTypes =
   | "hour"
   | "minute"
   | "second"
-  | "daterange" 
+  | "daterange"
   | "datetimerange"
   | "timerange";
 //   | "calendar"; //input;
 
-// export type SelectFieldTypes =
-//   | "select" // dropdown // variações comumns (com busca, assíncrono, com criação (createble), hierárquico)
+export type SelectFieldTypes =
+  | "select" // dropdown // variações comumns (com busca, assíncrono, com criação (createble), hierárquico)
+  | "multiselect"
+  | "tagselect";
 //   | "radiogroup"
 //   | "segmentedcontrol"
 //   | "toggle" // switch
-//   | "multiselect"
 //   | "checkboxgroup"
-//   | "tagselect"
 //   | "transferlist";
 
 // export type OthersFieldTypes =
@@ -59,10 +59,12 @@ export type DateFieldTypes =
 //   | "autocomplete"
 //   | "mention";
 
-// export type BooleanFieldTypes =
-//   | "checkbox"
-//   | "switch"
-//   | "toggle" // sim e nao
+export type BooleanFieldTypes =
+  | "checkbox"
+  | "switch"
+  | "toggle"
+  | "accept"
+  | "toggleselect";
 //   | "booleanbuttongroup";
 
 // export type FileFieldTypes =
@@ -117,4 +119,9 @@ export type DateFieldTypes =
 //   | "derivedfield"
 //   | "metadata"
 
-export type BaseFieldTypes = TextFieldTypes | NumberFieldTypes | DateFieldTypes;
+export type BaseFieldTypes =
+  | TextFieldTypes
+  | NumberFieldTypes
+  | DateFieldTypes
+  | SelectFieldTypes
+  | BooleanFieldTypes;

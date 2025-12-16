@@ -12,9 +12,9 @@ import { Button } from "@components/primary";
 import { Form } from "@components/form";
 import { TextField } from "@components/inputs";
 import { Alert } from "@components/feedback";
-import { getValidation } from "@utils/inputValidations";
 import type { Resolver } from "react-hook-form";
 import { FirebaseError } from "firebase/app";
+import { getValidation } from "@utils/inputValidations";
 const { Title, Text } = Typography;
 
 const schema = z.object({

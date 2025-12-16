@@ -1,12 +1,8 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { ConfigProvider } from "antd";
+import { useEffect, useMemo, useState } from "react";
+import { Mode, ThemeContext } from "./antd.context";
 import { DarkTheme } from "@theme/darkTheme";
 import { LightTheme } from "@theme/lightTheme";
-
-type Mode = "light" | "dark" | undefined;
-type ThemeCtx = { mode: Mode; setMode: (mode: Mode) => void };
-
-const ThemeContext = createContext<ThemeCtx | null>(null);
+import { ConfigProvider } from "antd";
 
 type AntdProviderProps = {
   children: React.ReactNode;
@@ -29,11 +25,3 @@ export function AntdProvider({ children }: AntdProviderProps) {
     </ThemeContext.Provider>
   );
 }
-
-export const useTheme = () => {
-  const ctx = useContext(ThemeContext);
-  //   const msg = "useTheme must be used within a ThemeProvider";
-  const msg = "useTheme deve estar dentro de um ThemeProvider";
-  if (!ctx) throw new Error(msg);
-  return ctx;
-};

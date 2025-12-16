@@ -1,5 +1,5 @@
 import "./App.css";
-import { AuthProvider } from "./providers/AuthProvider";
+import { AuthProvider } from "./providers";
 import AppRouter from "./routes/router";
 
 function App() {

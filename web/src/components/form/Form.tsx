@@ -2,7 +2,7 @@ import { Alert } from "@components/feedback";
 import { Form as AntdForm, FormProps as AntdFormProps } from "antd";
 import { FormProvider, UseFormReturn, FieldValues } from "react-hook-form";
 
-type FormProps<T extends FieldValues> = AntdFormProps & {
+export type FormProps<T extends FieldValues> = AntdFormProps & {
   methods: UseFormReturn<T>;
   onSubmit: (data: T) => void;
   showErrorSummary?: boolean;
@@ -10,7 +10,7 @@ type FormProps<T extends FieldValues> = AntdFormProps & {
   children: React.ReactNode;
 };
 
-export function Form<T extends FieldValues>({
+export default function Form<T extends FieldValues>({
   methods,
   onSubmit,
   layout = "vertical",

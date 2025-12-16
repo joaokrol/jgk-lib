@@ -1,9 +1,9 @@
-import { DatePicker } from "antd";
+import { TimePicker } from "antd";
 import { BaseField } from "../base/BaseField";
-import dayjs, { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 import { formatDate } from "./dateformatters";
 
-export interface DateFieldProps {
+export interface TimeFieldProps {
   name?: string;
   value?: string;
   onChange?: (v: string) => void;
@@ -12,21 +12,18 @@ export interface DateFieldProps {
   required?: boolean;
   helpText?: string;
   placeholder?: string;
-  type: "date" | "year" | "month" | "quarter" | "week" | "datetime";
+  type: "time" | "hour" | "minute" | "second";
   needConfirm?: boolean;
 }
 
-export default function DateField({ type = "date", ...rest }: DateFieldProps) {
+export default function TimeField({ type = "time", ...rest }: TimeFieldProps) {
   function Input(val: string, setVal: (v: string) => void) {
     const format = formatDate[type];
-
-    const dateValue: Dayjs | null = val ? dayjs(val, format) : null;
-
     return (
-      <DatePicker
-        value={dateValue}
+      <TimePicker
+        value={val ? dayjs(val, format) : null}
         format={format}
-        onChange={(_, dateString) => setVal(dateString || "")}
+        onChange={(_, timeString) => setVal(timeString || "")}
       />
     );
   }

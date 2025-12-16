@@ -1,4 +1,4 @@
-import { useAuth } from "@app/providers/AuthProvider";
+import { useAuth } from "@app/providers";
 import { Spin } from "antd";
 import { Navigate, useLocation } from "react-router-dom";
 
