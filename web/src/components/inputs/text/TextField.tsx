@@ -21,29 +21,58 @@ export default function TextField({
   max,
   ...rest
 }: TextFieldProps) {
-  function Input(val: string, setVal: (v: string) => void) {
-    const config = TEXT_FIELD_CONFIG[type];
-    const Component = config?.component ?? AntdInput;
+  // function Input(val: string, setVal: (v: string) => void) {
+  //   const config = TEXT_FIELD_CONFIG[type];
+  //   const Component = config?.component ?? AntdInput;
 
-    return (
-      <Component
-        value={val}
-        placeholder={rest.placeholder}
-        {...config?.props}
-        {...(type === "username" && max
-          ? {
-              count: {
-                ...config?.props?.count,
-                max,
-              },
+  //   return (
+  //     <Component
+  //       value={val}
+  //       placeholder={rest.placeholder}
+  //       {...config?.props}
+  //       {...(type === "username" && max
+  //         ? {
+  //             count: {
+  //               ...config?.props?.count,
+  //               max,
+  //             },
+  //           }
+  //         : {})}
+  //       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+  //         setVal(e.target.value)
+  //       }
+  //     />
+  //   );
+  // }
+
+  // // return <BaseField<string> render={Input} type={type} {...rest} />;
+
+  return (
+    <BaseField<string>
+      {...rest}
+      type={type}
+      render={(val, setVal) => {
+        const config = TEXT_FIELD_CONFIG[type];
+        const Component = config?.component ?? AntdInput;
+        return (
+          <Component
+            value={val}
+            placeholder={rest.placeholder}
+            {...config?.props}
+            {...(type === "username" && max
+              ? {
+                  count: {
+                    ...config?.props?.count,
+                    max,
+                  },
+                }
+              : {})}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setVal(e.target.value)
             }
-          : {})}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setVal(e.target.value)
-        }
-      />
-    );
-  }
-
-  return <BaseField<string> render={Input} type={type} {...rest} />;
+          />
+        );
+      }}
+    />
+  );
 }
