@@ -5,6 +5,7 @@ Projeto da base dos desenlvimentos das jgk
 # Pastas
 
 ## Esquema
+
 ```
 src
 ├─ app/ # bootstrap da aplicação
@@ -74,6 +75,7 @@ src
 │
 └─ index.tsx
 ```
+
 ## app/
 
 Função: bootstrap da aplicação.
@@ -357,3 +359,10 @@ Ajuste no bundler (Vite/Webpack) para reconhecer os aliases.
 5. features/foo/components/\* (tabela, formulário, filtros)
 6. features/foo/pages/FooList.tsx / FooForm.tsx
 7. app/routes/_ e app/navigation/_ (rotas + menu)
+
+
+# Ordem de desenvolvimento
+- Base do theme
+- Form e seu components
+- Página de login 
+- Integração Firebase

@@ -1,0 +1,8 @@
+.wrapper {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--pad);
+  background: var(--bg);
+  border-radius: var(--radius);
+}
