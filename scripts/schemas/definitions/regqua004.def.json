@@ -1,0 +1,239 @@
+{
+  "key": "regqua004",
+  "title": "Registro de Lotes de Farinha",
+  "label": "Registro de Lotes de Farinha - REGQUA004",
+  "type": "production",
+  "permissions": {
+    "read": ["operador", "gestor"],
+    "write": ["gestor"]
+  },
+  "columnsSchema": [
+    {
+      "key": "data",
+      "title": "Data",
+      "title_re": "Data",
+      "valueType": "date",
+      "renderInput": "DateField",
+      "typeInput": "date",
+      "renderColumn": "date",
+      "columnsOptions": {
+        "fixed": "left",
+        "editable": true,
+        "allowHiden": true,
+        "allowResize": true,
+        "allowMove": true,
+        "defaultVisible": true,
+        "defaultWidth": 100,
+        "defaultOrder": 1
+      },
+      "formOptions": {
+        "required": true,
+        "colSpan": 8
+      }
+    },
+    {
+      "key": "lote",
+      "title": "Lote",
+      "valueType": "text",
+      "renderInput": "TextField",
+      "typeInput": "text",
+      "renderColumn": "text",
+      "columnsOptions": {
+        "editable": true,
+        "allowHiden": true,
+        "allowResize": true,
+        "allowMove": true,
+        "defaultVisible": true,
+        "defaultWidth": 80,
+        "defaultOrder": 2
+      },
+      "formOptions": {
+        "required": true,
+        "placeholder": "Digite o lote...",
+        "colSpan": 8,
+        "mask": "#####-#"
+      }
+    },
+    {
+      "key": "tipo_farinha",
+      "title": "Tipo da Farinha",
+      "title_re": "Tipo da Farinha",
+      "valueType": "text",
+      "renderInput": "SelectField",
+      "typeInput": "select",
+      "renderColumn": "select",
+      "columnsOptions": {
+        "editable": true,
+        "allowHiden": true,
+        "allowResize": true,
+        "allowMove": true,
+        "defaultVisible": true,
+        "defaultWidth": 150,
+        "defaultOrder": 3
+      },
+      "formOptions": {
+        "required": true,
+        "placeholder": "Escola o tipo da farinha...",
+        "colSpan": 8
+      },
+      "optionsSource": {
+        "collection": "catalogs",
+        "document": "tipo_farinha",
+        "labelField": "label",
+        "valueField": "value"
+      }
+    },
+    {
+      "key": "quantidade_etiquetas",
+      "title": "Quantidade de Etiquetas",
+      "title_re": "Qtd Etiquetas",
+      "valueType": "number",
+      "renderInput": "NumberField",
+      "typeInput": "int",
+      "renderColumn": "int",
+      "columnsOptions": {
+        "editable": true,
+        "allowHiden": true,
+        "allowResize": true,
+        "allowMove": true,
+        "defaultVisible": true,
+        "defaultWidth": 80,
+        "defaultOrder": 4
+      },
+      "formOptions": {
+        "required": false,
+        "placeholder": "Digite o numero de etiquetas...",
+        "colSpan": 8,
+        "triggers": {
+          "editField": "AJUSTA - adicionar numeracao inicial e final"
+        }
+      }
+    },
+    {
+      "key": "numeracao_etiquetas",
+      "title": "Númeração Etiquetas",
+      "title_re": "Num Etiquetas",
+      "columnsOptions": {
+        "allowHiden": true,
+        "allowResize": true,
+        "allowMove": true,
+        "defaultVisible": true,
+        "defaultWidth": 200,
+        "defaultOrder": 5
+      },
+      "children": [
+        {
+          "key": "numeracao_etiquetas_inicio",
+          "title": "Inicial",
+          "title_re": "Inicial",
+          "valueType": "number",
+          "renderInput": "NumberField",
+          "typeInput": "int",
+          "renderColumn": "int",
+          "columnsOptions": {
+            "editable": true,
+            "allowHiden": true,
+            "allowResize": true,
+            "allowMove": true,
+            "defaultVisible": true,
+            "defaultWidth": 100,
+            "defaultOrder": 1
+          },
+          "formOptions": {
+            "required": false,
+            "colSpan": 8
+          }
+        },
+        {
+          "key": "numeracao_etiquetas_final",
+          "title": "Final",
+          "title_re": "Final",
+          "valueType": "number",
+          "renderInput": "NumberField",
+          "typeInput": "int",
+          "renderColumn": "int",
+          "columnsOptions": {
+            "editable": true,
+            "allowHiden": true,
+            "allowResize": true,
+            "allowMove": true,
+            "defaultVisible": true,
+            "defaultWidth": 100,
+            "defaultOrder": 100
+          },
+          "formOptions": {
+            "required": false,
+            "colSpan": 8
+          }
+        }
+      ]
+    },
+    {
+      "key": "etiquetas_utilizadas",
+      "title": "Etiquetas Utilizadas",
+      "title_re": "Etiq Utilizadas",
+      "valueType": "number",
+      "renderInput": "NumberField",
+      "typeInput": "int",
+      "renderColumn": "int",
+      "columnsOptions": {
+        "editable": true,
+        "allowHiden": true,
+        "allowResize": true,
+        "allowMove": true,
+        "defaultVisible": true,
+        "defaultWidth": 80,
+        "defaultOrder": 6
+      },
+      "formOptions": {
+        "required": false,
+        "colSpan": 8
+      }
+    },
+    {
+      "key": "etiquetas_nao_utilizadas",
+      "title": "Etiquetas Não Utilizadas",
+      "title_re": "Etiq Não Utiliz",
+      "valueType": "number",
+      "renderInput": "NumberField",
+      "typeInput": "int",
+      "renderColumn": "int",
+      "columnsOptions": {
+        "editable": true,
+        "allowHiden": true,
+        "allowResize": true,
+        "allowMove": true,
+        "defaultVisible": true,
+        "defaultWidth": 80,
+        "defaultOrder": 7
+      },
+      "formOptions": {
+        "required": false,
+        "colSpan": 8
+      }
+    },
+    {
+      "key": "observacao",
+      "title": "Observação",
+      "title_re": "Observação",
+      "valueType": "text",
+      "renderInput": "TextField",
+      "typeInput": "textarea",
+      "renderColumn": "textarea",
+      "columnsOptions": {
+        "editable": true,
+        "allowHiden": true,
+        "allowResize": true,
+        "allowMove": true,
+        "defaultVisible": true,
+        "defaultWidth": 200,
+        "defaultOrder": 8
+      },
+      "formOptions": {
+        "required": false,
+        "placeholder": "Digite a observação...",
+        "colSpan": 8
+      }
+    }
+  ]
+}

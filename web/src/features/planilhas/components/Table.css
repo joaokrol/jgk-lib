@@ -1,0 +1,94 @@
+/* .react-resizable {
+  position: relative;
+  background-clip: padding-box;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  right: -5px;
+  bottom: 0;
+  z-index: 10;
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+/* Mostra uma linha azul quando passa o mouse para saber que pode arrastar */
+.react-resizable:hover .react-resizable-handle {
+  border-right: 2px solid #1677ff;
+}
+*/
+
+/* Estilo para células editáveis */
+.editable-cell {
+  position: relative;
+}
+
+.editable-cell-value-wrap {
+  padding: 5px 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  min-height: 32px;
+}
+
+.editable-cell-value-wrap:hover {
+  border: 1px solid #d9d9d9;
+}
+
+/* --- CONFIGURAÇÃO GERAL DAS BORDAS --- */
+
+/* 1. Borda Externa (Topo e Esquerda) */
+
+.ant-table.ant-table-bordered > .ant-table-container {
+  border-top: 1.5px solid #d2d1d1 !important; /* Cor escura (Cinza chumbo) */
+  border-left: 1.5px solid #d2d1d1 !important;
+}
+
+/* 2. Células do Cabeçalho (Direita e Baixo) */
+.ant-table-thead > tr > th {
+  border-bottom: 1.5px solid #d2d1d1 !important;
+  border-right: 1.5px solid #d2d1d1 !important;
+}
+
+/* --- TAMANHO PERSONALIZADO: TINY (Fonte 11px) --- */
+
+/* 1. Cabeçalho e Células */
+.table-tiny .ant-table-thead > tr > th,
+.table-tiny .ant-table-tbody > tr > td {
+  padding: 2px 8px !important; /* Espaço vertical mínimo (2px) */
+  font-size: 11px !important;
+  line-height: 1.2 !important; /* Altura da linha compacta */
+}
+
+/* 2. Ajuste para os Inputs de Edição dentro da tabela */
+.table-tiny .ant-input,
+.table-tiny .ant-input-number-input,
+.table-tiny .ant-select-selector,
+.table-tiny .ant-picker-input > input {
+  font-size: 11px !important;
+  height: 24px !important; /* Altura reduzida do input */
+  padding: 0 4px !important;
+}
+
+/* Centraliza o texto do select verticalmente no tamanho pequeno */
+.table-tiny .ant-select-single .ant-select-selector {
+  height: 24px !important;
+  display: flex;
+  align-items: center;
+}
+
+/* 3. Ajuste do Rodapé (Paginação) para combinar */
+.table-tiny .ant-pagination {
+  font-size: 11px !important;
+  margin-top: 8px !important;
+}
+
+.ant-table-thead > tr > th {
+  text-align: center !important;
+}
+
+.ant-table-thead > tr > th .ant-table-filter-column {
+  justify-content: center;
+}

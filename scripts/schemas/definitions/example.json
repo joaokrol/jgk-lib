@@ -1,0 +1,38 @@
+{
+  "example": {
+    "key": "",
+    "title": "",
+    "title_re": "",
+    "valueType": "",
+    "renderInput": "",
+    "typeInput": "",
+    "renderColumn": "",
+    "columnsOptions": {
+      "fixed": "",
+      "editable": true,
+      "allowHiden": true,
+      "allowResize": true,
+      "allowMove": true,
+      "defaultVisible": true,
+      "defaultWidth": 0,
+      "defaultOrder": -1
+    },
+    "formOptions": {
+      "required": false,
+      "placeholder": "",
+      "colSpan": 8,
+      "mask": "",
+      "rules": {},
+      "customMask": "",
+      "customRules": {},
+      "triggers": {}
+    },
+    "options": [],
+    "optionsSource": {
+      "collection": "",
+      "document": "",
+      "labelField": "",
+      "valueField": ""
+    }
+  }
+}

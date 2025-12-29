@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { RequireAuth } from "@app/guards/RequireAuth";
 import AppLayout from "@layout/AppLayout";
 
@@ -7,7 +7,12 @@ import { Spin } from "antd";
 import ErrorPage from "./ErrorPage";
 
 const LoginPage = lazy(() => import("@features/auth/LoginPage"));
-const PlanilhasPage = lazy(() => import("@features/planilhas/PlanilhasPage"));
+const PlanilhasListPage = lazy(
+  () => import("@features/planilhas/pages/PlanilhasList")
+);
+const PlanilhasWorkspacePage = lazy(
+  () => import("@features/planilhas/pages/PlanilhasWorkspace")
+);
 const InputExamples = lazy(() => import("@features/example/InputExamples"));
 
 const PageLoader = () => (
@@ -45,14 +50,26 @@ const router = createBrowserRouter([
       },
       {
         path: "planilhas",
-        element: (
-          <Suspense fallback={<PageLoader />}>
-            <PlanilhasPage />
-          </Suspense>
-        ),
+        element: <Outlet />,
+        children: [
+          {
+            index: true,
+            element: (
+              <Suspense>
+                <PlanilhasListPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: ":id",
+            element: (
+              <Suspense>
+                <PlanilhasWorkspacePage />
+              </Suspense>
+            ),
+          },
+        ],
       },
-      // { path: "*", element: <h2>Página não encontrada.</h2> },
-      // { path: "planilhas/:id", element: <PlanilhasPage /> },
     ],
   },
 ]);
